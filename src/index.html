@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <title> edie homepage</title>
+    <link rel="shortcut icon" href="/Assets/devchallenges.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;1,100;1,200;1,400&family=Outfit&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;400;500;600&family=Ruda:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;1,100;1,200;1,400&family=Outfit&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;400;500;600&family=Ruda:wght@500&display=swap');
+         :root {
+            --background: rgb(41, 200, 41);
+        }
+        
+        body {
+            max-width: 100%;
+        }
+        
+        header {
+            /* background: var(--background); */
+            text-align: left;
+            z-index: 999;
+            width: 100%;
+            position: absolute;
+            z-index: 999;
+        }
+        
+        nav {
+            position: absolute;
+            width: 100%;
+            text-align: left;
+            top: 100%;
+            display: none;
+        }
+        
+        header h1 {
+            font-family: 'Heebo';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 35px;
+            color: #333333;
+        }
+        
+        nav ul {
+            padding: 5px;
+            margin: 2px;
+            list-style-type: none;
+            text-align: center;
+        }
+        
+        nav a {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            /* background-color: #333333; */
+            text-transform: uppercase;
+        }
+        
+        nav a:hover {
+            color: purple;
+        }
+        
+        .nav-toggle:checked~nav {
+            display: block;
+        }
+        
+        .nav-toggle {
+            display: none;
+        }
+        
+        .nav-toggle-label {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-toggle-label span,
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after {
+            display: block;
+            background: black;
+            height: 1.4px;
+            width: 1em;
+            position: relative;
+            border-radius: 5px;
+            color: black;
+        }
+        
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after {
+            content: '';
+            position: absolute;
+        }
+        
+        .nav-toggle-label span::before {
+            bottom: 3px;
+        }
+        
+        .nav-toggle-label span::after {
+            top: 3px;
+        }
+        
+        .unhappy {
+            padding-top: 22%;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            color: #2D9CDB;
+            margin-inline: 1.4rem;
+        }
+        
+        .wecreate {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            margin-inline: 1.4rem;
+        }
+        
+        .imageone {
+            border-radius: 13px;
+            height: 300%;
+            width: 100%;
+            margin-block: 1em;
+        }
+        
+        .story {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            margin-inline: 1.4rem;
+        }
+        
+        .weHelp {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            color: #4F4F4F;
+            margin-block: 1.5em;
+            margin-inline: 1.4rem;
+        }
+        
+        .wantustocontact {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 15px;
+            color: #828282;
+            margin-inline: 1.6rem;
+        }
+        
+        input,
+        input:placeholder-shown {
+            background: #F2F2F2;
+            color: #BDBDBD;
+            width: 100%;
+            padding-left: 15px;
+            border-radius: 12px;
+        }
+        
+        .form {
+            display: flex;
+            background: #F2F2F2;
+            border-radius: 12px;
+            height: 3em;
+            width: 19em;
+            margin-inline: 1.4rem;
+            justify-content: end;
+            margin-block: 1em;
+        }
+        
+        .btnone {
+            background: #2D9CDB;
+            border-radius: 12px;
+            width: 5.9em;
+            margin: 4px;
+            color: #F2F2F2;
+        }
+        
+        .weOffer {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            margin: 1.4rem;
+            margin-block: 6rem;
+        }
+        
+        .iconOne {
+            background: #2D9CDB;
+            border-radius: 16px;
+            width: 4em;
+            height: 4em;
+            margin-inline: 1.4rem;
+            padding: 13px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .uiux {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            margin-inline: 1.4rem;
+        }
+        
+        .loremone {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #4F4F4F;
+            margin-inline: 1.4rem;
+            margin-block: 2rem;
+        }
+        
+        .btntwo {
+            background: #E0E0E0;
+            border-radius: 12px;
+            width: 7em;
+            height: 2.9em;
+            margin-inline: 1.4rem;
+            margin-bottom: 5em;
+        }
+        
+        .btntwo>span {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            color: #828282;
+        }
+        
+        .icontwo {
+            background: #27AE60;
+            border-radius: 16px;
+            width: 4em;
+            height: 4em;
+            margin-inline: 1.4rem;
+            padding: 13px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .frontEnd {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            margin-inline: 1.4rem;
+        }
+        
+        .loremtwo {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #4F4F4F;
+            margin-inline: 1.4rem;
+            margin-block: 2rem;
+        }
+        
+        .btnthree {
+            background: #E0E0E0;
+            border-radius: 12px;
+            width: 7em;
+            height: 2.9em;
+            margin-inline: 1.4rem;
+            margin-bottom: 5em;
+        }
+        
+        .iconthree {
+            background: #EB5757;
+            border-radius: 16px;
+            width: 4em;
+            height: 4em;
+            margin-inline: 1.4rem;
+            padding: 13px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .backEnd {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            margin-inline: 1.4rem;
+        }
+        
+        .goodDesigns {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            margin-inline: 1.4rem;
+            margin-block: 2em;
+        }
+        
+        .smartHomeDiv {
+            opacity: 0.7;
+            border-radius: 12px;
+            max-width: 220%;
+            max-height: 200%;
+        }
+        
+        .smartHome {
+            border-radius: 8px;
+            /* transform: rotate(-15deg);
+            transform: scale(1.2);
+            transform: translate(30px, 20px) rotate(20deg); */
+            width: 100%;
+            padding-bottom: -20em;
+            object-position: 90;
+        }
+        
+        .small-font-cards {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 18px;
+            color: #828282;
+        }
+        
+        .medium-font-cards {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 17.5px;
+            line-height: 27px;
+            color: #333333;
+        }
+        
+        .productDiv {
+            opacity: 0.7;
+            border-radius: 20px;
+            max-width: 220%;
+            max-height: 200%;
+            margin-block: 2em;
+        }
+        
+        .productclass {
+            border-radius: 8px;
+            width: 100%;
+            padding-bottom: -20em;
+            object-position: 90;
+        }
+        
+        .seemore {
+            position: relative;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 27px;
+            color: #2D9CDB;
+        }
+        
+        .seemoreimage {
+            position: absolute;
+            display: flex;
+            top: 2px;
+            left: 80px;
+            font-weight: bolder;
+        }
+        
+        .teammemberdiv {
+            margin-block: 4em;
+        }
+        
+        #meettheteam {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 27px;
+            color: #EB5757;
+            margin-block: 5em;
+        }
+        
+        .teammemberdiv>h1 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 54px;
+            color: #333333;
+        }
+        
+        .teammemberdiv>small {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #4F4F4F;
+        }
+        
+        .gridimages {
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            border-radius: 15px;
+            align-items: center;
+        }
+        
+        .personone,
+        #personone {
+            border-radius: 15px;
+        }
+        
+        .persontwo,
+        #persontwo {
+            border-radius: 24px;
+        }
+        
+        .personthree,
+        #personthree {
+            border-radius: 24px;
+            grid-row: 1/4;
+            grid-column: 1/1;
+            height: auto;
+        }
+        
+        .fastoutstanding {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 34px;
+            color: #333333;
+            margin-block: 2em;
+        }
+        
+        .lastcarddiv {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            grid-template-rows: repeat(2, 50%);
+            margin-bottom: 3em;
+        }
+        
+        .lastcarddiv>img {
+            border-radius: 15px;
+            max-width: 80px;
+            max-height: 80px;
+            grid-column: 1/2;
+        }
+        
+        .lastcarddiv>h3 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            color: #333333;
+            grid-column: 2/2;
+            grid-row: 1/1;
+            margin-top: 1px;
+            margin-right: 40%;
+            padding-top: 5px;
+        }
+        
+        .lastcarddiv>span {
+            grid-column: 2/2;
+            grid-row: 2/1;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 27px;
+            color: #828282;
+            padding-top: 50px;
+        }
+        
+        footer {
+            background-color: #100E1D;
+        }
+        
+        footer>ul {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 200%;
+            color: #FFFFFF;
+            padding-left: 30px;
+            margin-top: 2em;
+        }
+        
+        .Eddie {
+            font-family: 'Heebo';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 36px;
+            line-height: 53px;
+            color: #F2F2F2;
+            padding-left: 30px;
+            margin-top: 40px;
+        }
+        
+        .EddieImages {
+            display: flex;
+            padding-left: 32px;
+            gap: 10px;
+            margin-bottom: 4em;
+        }
+        
+        #contactYou {
+            color: white;
+            margin-inline: 2.4em;
+        }
+        
+        .footerbutton {
+            background: #2D9CDB;
+            border-radius: 12px;
+            width: 5.9em;
+            margin: 4px;
+            color: #F2F2F2;
+        }
+        
+        .orjichimaprince {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+            color: #F2F2F2;
+            margin-inline: 2.4em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="eddie">Edie</h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a ref="#">Services</a>
+                </li>
+                <li>
+                    <a ref="#">Our Works</a>
+                </li>
+                <li>
+                    <a ref="#">Clients</a>
+                </li>
+                <li>
+                    <a ref="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+    </header>
+    <div class="unhappy"><small>Unhappy with your website?</small><br></div>
+    <div class="wecreate">
+        <span>We create beautiful<br>and fast web services</span>
+    </div>
+    <div> <img src="/Assets/heroImage.jpg" atl="tutorialImage" class="imageone"></div>
+
+    <div class="story">
+        <span>Story, emotion<br>and purpose</span>
+    </div>
+
+    <p class="weHelp">We help transform your ideas into real world<br>application that will outperform your
+        <br>toughest competition nd help you achieve<br>your strategic goals in short period of time</p>
+
+    <small class="wantustocontact">want us to contact you?</small>
+    <form action="" method="get" class="form">
+        <input text="email" id="name" placeholder="Email" />
+        <button class="btnone">Join</button>
+    </form>
+
+    </form>
+    <div class="weOffer">
+        <span>We offer high<br>demand services</span>
+    </div>
+    <div>
+        <img src="/Assets/write5.svg" class="iconOne" />
+        <span class="uiux">UI/UX Design</span>
+        <p class="loremone">Lorem ipsum dolor sit amet<br> consectetur adipisicing elit. Duis a<br>metus ac nulla consequat aliquet<br>id quis turpis.</p>
+
+        <button class="btntwo">
+            <span>Get started</span>
+        </button>
+    </div>
+    <div>
+        <img src="/Assets/navigation2.svg" alt="navigation" class="icontwo">
+        <span class="frontEnd">Front End</span>
+        <p class="loremtwo">Lorem ipsum dolor sit amet<br> consectetur adipisicing elit. Duis a<br>metus ac nulla consequat aliquet<br>id quis turpis.</p>
+        <button class="btntwo">
+            <span>Get started</span>
+        </button>
+    </div>
+    <div>
+        <img src="/Assets/menu-list.svg" alt="menu-list" class="iconthree">
+        <span class="backEnd">Back End</span>
+        <p class="loremtwo">Lorem ipsum dolor sit amet<br> consectetur adipisicing elit. Duis a<br>metus ac nulla consequat aliquet<br>id quis turpis.</p>
+        <button class="btntwo">
+            <span>Get started</span>
+        </button>
+        <p class="goodDesigns">
+            <span>Good design means<br> good business</span>
+        </p>
+        <div class="smartHomeDiv">
+            <img src="/Assets/smarthome.jpg" alt="smartHome" class="smartHome" />
+            <small class="small-font-cards">Full stack application</small><br>
+            <span class="medium-font-cards">Smart home dashboard</span>
+        </div>
+        <div class="productDiv">
+            <img src="/Assets/onboard.png" alt="onboard" class="productclass" />
+            <small class="small-font-cards">UX/UI Design</small><br>
+            <span class="medium-font-cards">Onboard application</span>
+        </div>
+        <div class="productDiv">
+            <img src="/Assets/booking.png" alt="booking" class="productclass" />
+            <small class="small-font-cards">Mobile application</small><br>
+            <span class="medium-font-cards">Booking system</span>
+        </div>
+        <div class="productDiv">
+            <img src="/Assets/juice-product.png" alt="juiceProducts" class="productclass" />
+            <small class="small-font-cards">Front End application</small><br>
+            <span class="medium-font-cards">juice product homepage</span>
+        </div>
+        <div class="seemore">
+            <!-- <a href=""><small>see more <span><img src="/Assets/arrowRight.svg"/></span></small></a> -->
+            <a href=""><small>see more <img src="/Assets/arrowRight.svg" class="seemoreimage" /></small></a>
+        </div>
+        <div class="teammemberdiv">
+            <small id="meettheteam">Meet the team</small>
+            <h1>We are chilled<br>and a laidback<br>team</h1>
+            <small>Lorem ipsum dolor sit amet,<br> consectetur, adipisicing elit. </small>
+        </div>
+        <div class="gridimages">
+            <div class="personone"> <img src="/Assets/person1.png" id="personone"></div>
+            <div class="persontwo"><img src="/Assets/person2.png" id="persontwo"></div>
+            <div class="personthree"><img src="/Assets/person3.png" id="personthree"></div>
+        </div>
+        <div>
+            <h1 class="fastoutstanding">
+                "Fast and outstanding<br>results.Edie understands<br> their customer's need.They
+                <br>have young and talented<br>team."
+            </h1>
+            <div class="lastcarddiv">
+                <img src="/Assets/person4.png" alt="cardimage" class="lastcardimage">
+                <h3 class="carlostran">Carlos Tran</h3>
+                <span>The Decorate Gatsby</span>
+            </div>
+            <footer>
+                <ul>
+                    <li>Home</li>
+                    <li>Services</li>
+                    <li>Our Works</li>
+                    <li>Clients</li>
+                    <li>Contact</li>
+                </ul>
+
+                <div class="Eddie">
+                    <span>Edie</span>
+                </div>
+                <div class="EddieImages">
+                    <img src="/Assets/instagram.svg" />
+                    <img src="/Assets/linkedin.svg" />
+                    <img src="/Assets/twitter.svg" />
+                </div>
+
+                <!-- <small id="contactYou">want us to contact you?</small> -->
+                <small class="wantustocontact">want us to contact you?</small>
+                <form action="" method="get" class="form">
+                    <input text="email" id="footerinput" placeholder="Email" />
+                    <button class="footerbutton">Join</button>
+                </form>
+                <smal class="orjichimaprince">
+                    created by orjichimaprince- devChallenges.io
+                </smal>
+            </footer>
+        </div>
+
+</body>
+
+</html>
